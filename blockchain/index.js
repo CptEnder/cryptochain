@@ -96,7 +96,7 @@ class Blockchain {
     if (JSON.stringify(chain[0]) !== JSON.stringify(Block.genesis())) {
       return false;
     }
-
+    console.log("1");
     for (let i = 1; i < chain.length; i++) {
       const { timestamp, lastHash, hash, nonce, difficulty, data } = chain[i];
       const lastDifficulty = chain[i - 1].difficulty;
@@ -111,9 +111,10 @@ class Blockchain {
         difficulty,
         data
       );
-
+      console.log("2");
       if (hash !== validatedHash) return false;
-      // if (Math.abs(lastDifficulty - difficulty) > 1) return false;
+      console.log("3");
+      if (Math.abs(lastDifficulty - difficulty) > 1) return false;
     }
     return true;
   }
