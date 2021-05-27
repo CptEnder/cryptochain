@@ -94,6 +94,7 @@ class Blockchain {
 
   static isValidChain(chain) {
     if (JSON.stringify(chain[0]) !== JSON.stringify(Block.genesis())) {
+      console.log("0");
       return false;
     }
     console.log("1");
