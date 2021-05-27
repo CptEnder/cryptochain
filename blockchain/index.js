@@ -113,7 +113,7 @@ class Blockchain {
       );
 
       if (hash !== validatedHash) return false;
-      if (Math.abs(lastDifficulty - difficulty) > 1) return false;
+      // if (Math.abs(lastDifficulty - difficulty) > 1) return false;
     }
     return true;
   }
